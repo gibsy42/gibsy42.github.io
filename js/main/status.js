@@ -8,7 +8,7 @@ async function updateStatus() {
         const onlineSince = new Date(data.online_since).getTime();
 
         const diffLastMs = now - lastUpdate;
-        const isOnline = diffLastMs <= 60_000;
+        const isOnline = diffLastMs <= 240_000; // 3 минуты 
 
         // Online / Offline
         let diffMs;
