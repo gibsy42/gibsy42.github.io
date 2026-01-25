@@ -1,1 +1,16 @@
-{"online": true, "last_update": "2026-01-25T16:56:31.568917+00:00", "online_since": "2026-01-25T06:54:07.488111+00:00", "pc_stats": {"cpu_percent": 14.8, "gpu_percent": 4, "ram": "9.8/32GB", "disks": {"C:": "97/447GB", "D:": "440/466GB", "Z:": "319/464GB"}, "cpu_temp": null}}
+{
+  "online": true,
+  "last_update": "2026-01-25T17:28:20.808564+00:00",
+  "online_since": "2026-01-25T17:28:20.808564+00:00",
+  "pc_stats": {
+    "cpu_percent": 21.6,
+    "gpu_percent": 0,
+    "ram": "12.4/32GB",
+    "disks": {
+      "C:": "207/447GB",
+      "D:": "440/466GB",
+      "Z:": "319/464GB"
+    },
+    "cpu_temp": null
+  }
+}
