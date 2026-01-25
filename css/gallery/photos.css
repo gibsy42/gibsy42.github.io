@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    color: #66ff66;
+    height: 100vh;
+    background: 
+       linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
+       url("../../MainResources/main_bg.gif") repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* ===== КНОПКА НАЗАД ===== */
+#backBtn {
+    position: fixed;
+    top: 4px;
+    left: 20px;
+    width: 150px;
+    height: 55px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* ===== HEADER ===== */
+.header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #f001ff;
+    padding: 7px 0px;
+    margin: 10;
+    background: linear-gradient(to right, rgba(128,0,0,0.7), rgba(128,128,0,0.7), rgba(0,128,0,0.7), rgba(0,128,128,0.7), rgba(0,0,128,0.7), rgba(128,0,128,0.7));
+    text-shadow:
+        0 0 10px #66ff66,
+        0 0 20px #66ff66,
+        0 0 35px #66ff66,
+        0 0 60px #66ff66;
+    animation: glow 5s ease-in-out infinite alternate;
+}
+
+/* ===== ГАЛЕРЕЯ ===== */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.photo-box {
+    position: relative;
+    background: #000011;
+    border: 3px solid #66ff66;
+    padding: 5px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 5px #66ff66;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.photo-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #66ff66;
+}
+
+.photo-box img {
+    width: 100%;
+    display: block;
+    border: 2px solid #66ff66;
+}
+
+.photo-date {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #66ff66;
+    font-weight: bold;
+}
+
+/* ===== POPUP ФОТО ===== */
+#photoPopup {
+    display:none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000011;
+    border: 3px dotted #66ff66;
+    padding: 10px;
+    z-index: 10000;
+    text-align: center;
+    box-shadow: 0 0 30px #66ff66;
+}
+
+#photoPopup img {
+    width: 90%;
+    max-width: 800px;
+    border: 2px solid #66ff66;
+}
+
+#photoPopup .popupDate {
+    margin-top: 5px;
+    color: #66ff66;
+    font-weight: bold;
+}
+
+#photoPopup .closeBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ff00ff;
+    font-size: 20px;
+}

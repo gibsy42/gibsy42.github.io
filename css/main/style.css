@@ -1,0 +1,402 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 0px;
+
+    background:
+        linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.5)),
+        url("../../MainResources/second_bg.gif") repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    font-family: "MS Sans Serif", serif;
+    color: #000000;
+}
+
+.blog-date {
+    background: #c0c0c0;       
+    color: #000000;            
+    padding: 5px;
+    margin-bottom: 4px;
+    border: 1px inset #fff;    
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.blog-date:hover {
+    background: #969595;
+}
+
+.links-content a {
+    color: #000000;        
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links-content a:hover {
+    color: #0c0180;
+    text-decoration: underline;
+}
+
+/* общий стиль окон ============================== */
+.window {
+    position: absolute;
+    background: #c0c0c0;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+    user-select: text;
+    z-index: 1; 
+    border: 2px inset #dfdfdf;
+}
+
+.window-bar {
+    height: 28px;
+    background: linear-gradient(to right, #000080, #0000CD, #1E90FF);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    cursor: move;
+    font-weight: bold;
+    font-size: 14px;
+    border-top: 2px solid #c3c3c3;
+    border-left: 2px solid #c3c3c3;
+    border-right: 2px solid #c3c3c3;
+    
+    
+}
+
+.window-bar .window-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px; 
+    vertical-align: middle; 
+}
+
+.window-bar span {
+    display: inline-block; 
+}
+
+.window-buttons {
+    display: flex;
+    gap: 2px;
+    margin-left: auto; 
+}
+
+.window-buttons div {
+    width: 20px;
+    height: 18px;
+    background: #c0c0c0;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #808080;
+    border-right: 2px solid #808080;
+
+    text-align: center;
+    line-height: 18px;
+    font-weight: bold;
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+
+    transition: all 0.05s;
+}
+
+.window-content {
+    padding: 10px;
+    background: #c0c0c0;
+    color: #000000;
+    font-size: 14px;
+}
+
+.header {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #BA55D3, #9B30FF, #8A2BE2);
+    color: #F8F8F8;
+}
+
+/* лейаут =============================================*/
+.content {
+    display: table;
+    width: 100%;
+}
+.left, .right, .center {
+    display: table-cell;
+    vertical-align: top;
+    padding: 10px;
+}
+.left, .right {
+    width: 25%;
+    font-size: 15px;
+}
+
+/* боксы============================================*/
+.box {
+    border: 2px inset #0c0180;
+    padding: 10px;
+    margin-bottom: 12px;
+    background: #999999;
+}
+.updates {
+    background: #999999;
+    color: #000000;
+    font-family: "MS Sans Serif", monospace;
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+.cat {
+    text-align: center;
+    margin-top: 15px;
+}
+.cat img {
+    width: 220px;
+    border: 2px inset #0c0180;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+.gif {
+    text-align: center;
+    margin-top: 12px;
+}
+.gif img {
+    width: 100%;
+    border: 2px inset #0c0180;
+} 
+
+/* плеер ==============================================*/
+.player-box {
+    width: 210px;
+    background: #999999;
+    border: 2px inset #0c0180;
+    padding: 5px;
+    text-align: center;
+    font-family: 'MS Sans Serif', serif;
+    margin-bottom: 10px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+.player-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #111111;
+}
+.player-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.player-controls button {
+    width: 40px;
+    height: 24px;
+    background: #c0c0c0;
+    border: 2px outset #fff;
+    font-family: 'MS Sans Serif', serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1.2;
+}
+.player-controls button:active {
+    border-style: inset;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.volume-control input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #c0c0c0;
+    border: 2px inset #fff;
+    margin: 0;
+    cursor: pointer;
+}
+.volume-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 8px;          
+    height: 16px;         
+    background: #202020; 
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 0 #fff, -1px -1px 0 #808080;
+    margin-top: -4px;
+    border-radius: 0;     
+}
+.volume-control input[type="range"]::-moz-range-thumb {
+    width: 8px;
+    height: 16px;
+    background: #202020;
+    border: 1px solid #fff;
+    border-radius: 0;
+}
+
+.seek-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.seek-bar input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #c0c0c0;
+    border: 2px inset #fff;
+    margin: 0;
+    cursor: pointer;
+}
+.seek-bar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 8px;          
+    height: 16px;         
+    background: #202020; 
+    border: 1px solid #fff;
+    box-shadow: 1px 1px 0 #fff, -1px -1px 0 #808080;
+    margin-top: -4px;
+    border-radius: 0;     
+}
+.seek-bar input[type="range"]::-moz-range-thumb {
+    width: 8px;
+    height: 16px;
+    background: #202020;
+    border: 1px solid #fff;
+    border-radius: 0;
+}
+
+/* баннер ==============================================*/
+#banner {
+    position: fixed;
+}
+
+/* центр мейн окно =============================================*/
+#mainWindow {
+    width: 900px;
+    top: 19%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:1;
+}
+
+/* стиль кнопок ===========================================*/
+.mainBtn {
+    padding: 8px 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #BA55D3, #9B30FF, #8A2BE2);
+    border: 2px outset #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width:222px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+.mainBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #8A2BE2;
+}
+
+/* выделение ========================== */
+::selection {
+    background: #8A2BE2; 
+    color: #ffffff;      
+}
+
+/* fc2 counter ==============================================*/
+#fc2-counter-fixed {
+    position: fixed;      
+    bottom: 33px;          
+    left: 42px;          
+    z-index: 10000;       
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+#fc2-counter-fixed img {
+    width: 1px;           /* по дефолту width: 170px; ==============================================*/
+    height: auto;
+}
+
+/* ссылки ==============================================*/
+.link {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.shortcut, .shortcut-label {
+    font-family: "MS Sans Serif", serif;
+    user-select: none;
+}
+
+.shortcut {
+    display: inline-block;
+    font-size: 12px;
+    color: white;
+    text-shadow: 1px 1px 0 #000;
+    cursor: pointer;
+}
+.shortcut a {
+    text-decoration: none;  
+    color: inherit;       
+}
+.shortcut img {
+    display: block;
+    margin: 0 auto 2px auto;
+    image-rendering: pixelated;
+}
+.shortcut-label {
+    font-size: 13px;
+    line-height: 13px;
+    white-space: nowrap;
+    color: white;
+    text-shadow: 1px 1px 0 #000;
+}
+
+#desktop {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;              
+    align-items: flex-start; 
+    justify-content: flex-start; 
+}
+
+/* окно обновлений странциы ==============================================*/
+#updatesWindow {
+    position: fixed;      
+    top: 150px;             
+    left: 50%;            
+    transform: translateX(-50%); 
+    width: 520px;           
+    display: none;            
+    background: #c8c8c8;      
+    border: 2px inset #dfdfdf;  
+    z-index: 999999999999;
+    font-family: Tahoma, serif;
+}
+
+#disks {
+    white-space: pre-line;
+    font-weight: bold;
+}
+#cpu {
+    font-weight: bold;
+}
+#gpu {
+    font-weight: bold;
+}
+#ram {
+    font-weight: bold;
+}

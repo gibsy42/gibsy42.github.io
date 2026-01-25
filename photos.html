@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Photos</title>
+<link rel="stylesheet" href="css/gallery/photos.css">
+<link rel="icon" type="image/png" href="https://jaryq.neocities.org/MainResources/favicon.png">
+</head>
+<body>
+
+<!-- кнопка НАЗАД ===================-->
+<img id="backBtn" src="Gallery/back_button.png" alt="Back" onclick="location.href='index.html'">
+
+<!-- HEADER ====================-->
+<div class="header">My Photos</div>
+
+<!-- ГАЛЕРЕЯ ===========-->
+<div class="gallery">
+    <div class="photo-box">
+        <img src="Gallery/141.png" alt="Photo 1">
+        <div class="photo-date">141 wallpaper</div>
+    </div>
+    <div class="photo-box">
+        <img src="Gallery/winter141.png" alt="Photo 2">
+        <div class="photo-date">141 winter wallpaper</div>
+    </div>
+    <div class="photo-box">
+        <img src="Gallery/коровка.jpg" alt="Photo 3">
+        <div class="photo-date">morphe_ya</div>
+    </div>
+</div>
+
+<div id="photoPopup">
+    <img id="popupImg" src="">
+    <div class="popupDate" id="popupDate"></div>
+    <div class="closeBtn" onclick="closePopup()">✖</div>
+</div>
+
+<script src="js/gallery/photos.js" defer></script>
+</body>
+</html>

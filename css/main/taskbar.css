@@ -1,0 +1,139 @@
+/* === ТАСКБАР === */
+#taskbar {
+    position: fixed;
+    bottom: 0px;  
+    left: 0;
+    width: calc(100%);
+    height: 38px;
+    margin: 0 4px;   
+    background: #c0c0c0;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid #ffffff;
+    box-shadow: inset 0 1px #808080;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 12px;
+    z-index: 9999999999999999999;
+    box-sizing: border-box;
+}
+
+/* КНОПКА СТАРТ================= */
+#start-btn {
+    height: 37px;
+    width: 100px;
+    margin: 4px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    cursor: pointer;
+}
+
+#start-btn:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+#start-btn img {
+    width: 99px;   
+    height: 36px; 
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+
+/* TASK BUTTONS ================== */
+#task-buttons {
+    display: flex;
+    flex: 1;
+}
+
+.task-button {
+    display: flex;
+    align-items: center;
+
+    min-width: 160px; 
+    max-width: 220px;
+	  min-height: 22px;
+
+    margin: 2px;
+    padding: 2px 10px;
+
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+               /*   #ffffff #808080 #808080 #ffffff; светл */
+               /*   #808080 #ffffff #ffffff #808080;  темный */ 
+  
+
+    cursor: default;
+}
+.task-button span {
+    font-family: "Tahoma", "MS Sans Serif", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.task-button.active {
+    background: #c0c0c0;
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.task-button img {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+/*  ТРЕЙ ============================== */
+#tray {
+    position:relative;
+    display: flex;
+    align-items: center;
+    padding: 2px 6px;
+    background: transparent;
+    height: 38px;
+}
+
+#tray iframe {
+    background: transparent; 
+}
+
+#tray iframe {
+    pointer-events: none;
+}
+
+#win98-clock {
+    position: absolute;
+    right: 9px;
+    width:100px;
+    top: 50%;         
+    transform: translateY(-50%); 
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 18px;
+    text-align: right;
+    background: #c0c0c0;
+    padding: 2px 6px;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow:
+        inset -1px -1px 0 #ffffff,
+        inset 1px 1px 0 #808080;
+}
+
+#trayimage {
+    position:absolute;
+    width: 45px;
+    z-index:111;
+    right:74px;
+    display: flex;    
+    gap: 4px; 
+}
+
+#trayimage img {
+    width: 100%;
+    display: block;
+}

@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("../../MainResources/gamesBG.jpg")no-repeat;
+      background-size: cover;
+    color: #fff;
+}
+
+#top {
+    width: 100%;
+	  height: 64px;
+    padding: 13px;
+    background: rgba(1, 1, 1, 0.8);
+    box-shadow: 0 6px 3px rgba(0,0,0,0.5);
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    box-sizing: border-box;
+}
+#top p {
+    margin: 0; 
+}
+
+/* BACK BUTTON */
+.back-btn {
+    position: absolute;
+    top: 9px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    background: rgba(88, 88, 88, 0.4);
+    border: 2px solid #000;
+    box-shadow: inset -2px -2px rgba(32, 32, 32, 0.8),
+                inset 2px 2px rgba(222, 222, 222, 0.8);
+    width: 170px;
+    height: 44px;
+    backdrop-filter: blur(2px);
+}
+
+.back-btn:active {
+    background: rgba(76, 76, 76, 0.8);
+    box-shadow: inset -2px -2px rgba(222, 222, 222, 0.8),
+                inset 2px 2px rgba(32, 32, 32, 0.8);
+}
+
+#center {
+    max-width: 900px;
+    margin: 0px auto 40px auto; 
+    padding: 20px;
+    text-align: center;
+}
+
+#center h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Таблица с заголовком колонок */
+table.head {
+    width: 99%;
+    border-collapse: collapse;
+    background: rgba(50, 50, 50, 0.2); 
+    margin-bottom: 10px; 
+	table-layout: fixed;
+	
+}
+
+table.head th {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background: rgba(120, 60, 60, 0.7);
+	table-layout: fixed;
+}
+
+/* Таблица с играми */
+table.games {
+    width: 99%;
+    border-collapse: collapse;
+    background: rgba(50, 50, 50, 0.3);
+	table-layout: fixed;
+}
+
+table.games th,
+table.games td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background: rgba(1, 1, 1, 0.3); 
+    font-weight: normal; 
+	table-layout: fixed;
+}
+
+/* Чередование строк в games */
+table.games tr:nth-child(even) {
+    background: rgba(1, 1, 1, 0.4);
+}
+
+table.head th,
+table.games th,
+table.games td {
+  
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px; }    
+    

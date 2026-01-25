@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jaryq's website</title>
+    <link rel="icon" type="image/png" href="https://jaryq.neocities.org/MainResources/favicon.png">
+    <link rel="stylesheet" href="css/main/style.css">
+    <link rel="stylesheet" href="css/main/taskbar.css">
+</head>
+<body>
+<div id="site-wrapper">
+
+<!-- главное окно -->
+<div class="window" id="mainWindow">
+    <div class="window-bar" id="mainWindowBar">
+    <img src="/MainResources/html.png" alt="Browser Icon" class="window-icon">
+        <span>Internet Explorer.exe</span>
+        <div class="window-buttons">
+            <div><span>_</span></div>
+            <div><span>□</span></div>
+            <div><span>X</span></div>
+    </div>
+    </div>
+
+    <div class="window-content">
+        <div class="header">https://jaryq.neocities.org</div>
+        <div class="content">
+
+
+            <div class="window" id="guestbookWindow" style="display:none; width:720px; top:160px; left:55%;">
+                <div class="window-bar" id="guestbookBar">
+                    <span>guestbook.exe</span>
+                    <div class="window-buttons">
+                        <div onclick="closeGuestbook()">X</div>
+                    </div>
+                </div>
+                <div class="window-content" style="padding:0; height:500px;">
+                    <iframe src="https://jaryq.atabook.org" 
+                            style="width:100%; height:100%; border:none; overflow:auto;"></iframe>
+                </div>
+            </div>
+
+            <!-- левый блок -->
+            <div class="left">
+                <div class="window box" style="position:relative; width:200px;">
+                    <div class="window-bar">ABOUT ME
+                    </div>
+                    <div class="window-content">
+                        Name: ???<br>
+                        Location: Asia<br>
+                        Status:
+                        <span id="pcStatus">Loading...</span>
+                    </div>
+                </div>
+
+            <!-- ПЛЕЕР (спизжен с другого сайта но с моим дизайном) -->
+                <div class="player-box">
+    <div class="player-title" id="trackTitle">Now Playing: drugs.mp3</div>
+    
+    <audio id="audioPlayer">
+        <source src="https://files.catbox.moe/sn936v.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+    <div class="player-controls">
+        <button id="prevBtn">◀◀</button>
+        <button id="playPauseBtn">>▶</button>
+        <button id="nextBtn">▶▶</button>
+    </div>
+    
+    <div class="volume-control">
+        volume<input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+    </div>
+    <div class="seek-bar">
+      seek<input type="range" id="seekSlider" min="0" max="100" value="0">
+    </div>
+
+  
+</div>
+
+
+                <div class="window box" style="position:relative; width:200px; top:2px;">
+                    <div class="window-bar">LINKS
+                    </div>
+                    <div class="window-content links-content">
+                        <a href="https://www.youtube.com/@%D0%B3%D0%B8%D0%B1%D1%81%D0%B8" target="_blank">YouTube</a><br>
+                        <a href="https://github.com/Gibsy" target="_blank">GitHub</a><br>
+                        <a href="https://steamcommunity.com/id/gibsyz" target="_blank">Steam</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- центр -->
+            <div class="center">
+                <div class="box updates">
+                    <b>============ WELCOME ============</b><br><br>
+                    Welcome to my website, traveller
+                </div>
+                <div class="cat">
+                    <img src="MainResources/MFLVSZ3FK44TCSKIJJWFSV2RM5SEO2DQMN4UEMC2LBUDASKIKJ3ESRZRNQ======.jpg" alt="My cat">                 <!--собака(некот)-->
+                    <div></div>
+                </div>
+            </div>
+
+            <!-- правый блок -->
+            <div class="right">
+            
+                <div class="window box" style="position:relative; width:220px; height:85px; left:0px;">
+                    <div class="window-bar">???
+                    </div>
+                    <div class="window-content" style="position:relative; width:200px; height:35px; left:0px;"> "Wake up, Neo.. The Matrix has you.."
+                    </div>
+                </div>
+
+                <div class="window box" style="position:relative; width:220px; height:205px; left:0px;">
+                    <div class="window-bar">notepad.exe
+                    </div>
+                    <div class="window-content" style="font-family: 'MS Sans Serif', monospace; width:200px; height:155px; font-size:13px; overflow-y:auto;">
+                        1) Add shortcuts (done) <br>
+                        2) Add new themes/some redesign (done) <br>
+                        3) Add PC Monitoring in realtime (done) <br>
+                        4) Add chess game<br>
+                        5) Complete Projects.html (in progress)<br>
+                    </div>
+               </div>
+            </div>    
+        </div>
+
+        <!-- кнопки снизу мейн окна -->
+        <div id="buttonsContainer" style="display: flex; gap: 5px; padding: 0 10px;">
+              <button class="mainBtn" id="guestbookBtn">Guestbook</button>
+            <button class="mainBtn" onclick="openMinesweeper()">My Projects</button>
+            <div style="margin-left: auto;"></div>
+              <button class="mainBtn" data-link="photos.html">Photos</button>
+              <button class="mainBtn" id="blogBtn">MICRO BLOG</button>
+        </div>
+    </div>
+</div>
+
+<!-- счетчик fc2  -->
+<div id="fc2-counter-fixed">
+    <a href="https://fc2.com/" target="_blank">
+         <img src="https://counter1.fc2.com/counter_img.php?id=40679512&amp;main=1" alt="FC2 Counter"/>
+    </a>
+</div>
+
+<!-- таскбар -->
+<div id="taskbar">
+    <button id="start-btn">
+        <img src="MainResources/start1.png" alt="Start">
+    </button>
+    <div id="task-buttons"></div>
+    
+    <div id="tray">
+        <div id="win98-clock"></div>
+            <div id="trayimage">
+                <img src="MainResources/loudspeaker.png" alt="speaker">
+                <img src="MainResources/tbar.png " alt="tbar">
+            </div>
+    </div>
+</div>
+
+</div>
+<!--ШОРТКАТЫ ее========--> 
+                  <div id="desktop">
+  <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;">
+    <a href="/blog.html">
+      <img src="/MainResources/notepad.png" width="48" alt="blog">
+       <img src="/MainResources/shortcut.png"
+           style="position: absolute; top: 0; left: 0; width: 48px; height: 48px; pointer-events: none;" alt="shortcut">
+      <div class="shortcut-label">Blog</div>
+    </a>
+  </div>
+  
+  <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;"
+     onclick="openUpdates()">
+    <img src="/MainResources/calendar.png" alt="calendar" width="48">
+    <img src="/MainResources/shortcut.png"
+         style="position:absolute; top:0; left:0; width:48px; height:48px;" alt="shortcut">
+    <div class="shortcut-label">Updates</div>
+</div>
+<!-- окно update log #надо изменить#-->
+<div class="window" id="updatesWindow" style="display:none; width:520px; top:140px; left:50%;">
+    <div class="window-bar" id="updatesBar">
+        <div style="display:flex; align-items:center; gap:2px;">
+          <img src="/MainResources/calendar.png" class="window-icon" alt="calendar">
+            <span>Updates.exe</span>
+        </div>
+        <div class="window-buttons">
+            <div onclick="closeUpdates()">X</div>
+        </div>
+    </div>
+
+    <div class="window-content" id="changelog" style="background:#c8c8c8; font-family:MS Sans Serif;    ">
+    
+          <hr>
+        <h3 style="text-align:center; margin:0;"><b>03/01/2026</b></h3>
+          <hr>
+        <ul style="padding-left:20px;">
+            <li>Added a Windows 98-style taskbar</li>
+            <li>Added shortcuts</li>
+            <li>New design (Windows 98 style)</li>
+            <li>Bug fixes</li>
+            <li>Removed a lot of junk</li>
+            <li>Minor changes</li>
+        </ul>
+          
+          <hr>
+        <h3 style="text-align:center; margin:0;"><b>06/01/2026</b></h3>
+          <hr>
+        <ul style="padding-left:20px;">
+            <li>Added 3 new pages</li>
+            <li>Now all the shortcuts are working</li>
+            <li>New design for main pages</li>
+            <li>Added updates.exe</li>
+            <li>Added my button (look for it in the credits)</li>
+            <li>Started working on games.html, credits.html and misc.html</li>
+            <li>Made some buttons for fav websites</li>
+            <li>Taskbar is 90% finished</li>
+            <li>Too many changes tbh</li>
+        </ul>
+        
+          <hr>
+        <h3 style="text-align:center; margin:0;"><b>09/01/2026</b></h3>
+          <hr>
+        <ul style="padding-left:20px;">
+            <li>Added minesweeper game (https://github.com/areasoft/winmine.html)</li>
+            <li><s>Taskbar is now 100% finished!</s></li>
+            <li>Nah i forgot about Start button, will add functionality soon</li>
+            <li>New design for main page (minor changes)</li>
+        </ul>
+    </div>
+</div>
+  
+  <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;" onclick="openComputer()">
+    <img src="/MainResources/computer.png" width="48" alt="computer">
+    <img src="/MainResources/shortcut.png"
+         style="position: absolute; top: 0; left: 0; width: 48px; height: 48px; pointer-events: none;" alt="shortcut">
+    <div class="shortcut-label">Computer</div>
+</div>
+<div class="window" id="computerWindow" style="display:none; width:720px; top:160px; left:50%; transform:translateX(-50%); z-index:20000;">
+    <div class="window-bar" id="computerBar">
+        <img src="/MainResources/computer.png" alt="Computer Icon" class="window-icon">
+        <span>My Computer.exe</span>
+        <div class="window-buttons">
+            <div onclick="closeComputer()">X</div>
+        </div>
+    </div>
+  <div class="window-content" id="computerContent" style="padding:20px; font-family:'Tahoma';">
+      <div class="computer-section">
+        <b>System Info:</b><br>
+        CPU: Intel core i5 12400f<br>
+        GPU: Nvidia RTX3060 12gb<br>
+        RAM: 2 x 16 GB DDR4 3200 mhz<br>
+        Browser: Firefox ( the best browser btw)<br>
+        OS: Windows 11 64bit/ Cachyos<br>
+      </div>
+
+      </div>
+    </div>
+
+  <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;">
+    <a href="/games.html">
+      <img src="/MainResources/games.png" width="48" alt="blog">
+       <img src="/MainResources/shortcut.png" 
+           style="position: absolute; top: 0; left: 0; width: 48px; height: 48px; pointer-events: none;" alt="shortcut">
+      <div class="shortcut-label">Games</div>
+    </a>
+  </div>
+  
+  <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;">
+    <a href="/credits.html">
+      <img src="/MainResources/credits.png" width="48" alt="blog">
+       <img src="/MainResources/shortcut.png" 
+           style="position: absolute; top: 0; left: 0; width: 48px; height: 48px; pointer-events: none;" alt="shortcut">
+      <div class="shortcut-label">Credits</div>
+    </a>
+  </div>
+  
+  <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;">
+    <a href="/misc.html">
+      <img src="/MainResources/bin.png" width="48" alt="blog">
+        <img src="/MainResources/shortcut.png"
+             style="position: absolute; top: 0; left: 0; width: 48px; height: 48px; pointer-events: none;" alt="shortcut">
+      <div class="shortcut-label">My stuff</div>
+    </a>
+  </div>
+  
+  <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;" onclick="openMinesweeper()">
+        <img src="/MainResources/minesweeper.png"
+          style="width:48px; height:48px; transform: scale(1.4); transform-origin: center;" alt="minesweeper">
+            <img src="/MainResources/shortcut.png"
+                style="position:absolute; top:0; left:0; width:48px; height:48px; pointer-events:none;" alt="shortcut">
+            <div class="shortcut-label">Minesweeper</div>
+        </div>
+  </div>
+  
+  <div class="window box" style="position:absolute; width:250px; height:160px; bottom:50px; right:30px">
+      <div class="window-bar">PC STATS (updates in real time)</div>
+        <div class="window-content" style="width:230px; height:111px; bottom:50px; right:30px">
+            <div id="pcStatus"></div>
+            <div id="cpu"></div>
+            <div id="gpu"></div>
+            <div id="ram"></div>
+            <div id="disks"></div>
+        </div>
+  </div>
+  
+  
+<div class='window box' style="position:absolute; right:30px; width: 250px; bottom:250px;">
+    <div class="window-bar">info</div>  
+      <div class="window-content">
+      <p style = "font-weight:bold; font-size:16px;margin:0px;">I am currently preparing for my exams, so I don’t have time to work on this website rn :( i will try my best to improve it and fill out all the pages</p>
+        </div>
+  </div>
+
+<!-- сапер -->
+<div class="window" id="minesweeperWindow" style="display:none; flex-direction: column; width:320px; height:400px; top:400px; left:50%; transform:translateX(-50%); z-index:30000;">
+    <div class="window-bar" id="minesweeperBar">
+        <span>minesweeper.exe</span>
+    <div class="window-buttons">
+            <div onclick="closeMinesweeper()">X</div>
+    </div>
+</div>
+    <div class="window-content" style="padding:0; height:100%;">
+        <iframe src="minesweeper.html?height=16&width=16&mines=40"
+             style="width:100%; height:100%; border:none;">
+        </iframe>
+    </div>
+</div>
+
+<!-- гестбук -->
+<div class="window" id="guestbookWindow" style="display:none; width:720px; top:160px; left:55%;">
+      <div class="window-bar" id="guestbookBar">
+            <span>guestbook.exe</span>
+      <div class="window-buttons">
+              <div onclick="closeGuestbook()">X</div>
+      </div>
+</div>
+      <div class="window-content" style="padding:0; height:500px;">
+          <iframe src="https://jaryq.atabook.org" style="width:100%; height:100%; border:none; overflow:auto;"></iframe>
+      </div>
+</div>
+
+            <!--окно блога--> <!--"почему тут а не в конце с остальными окнами??" мне лень переделывать!!--> <!-- уже переделал :) -->
+            <div class="window" id="blogWindow" style="display:none; width:720px; top:160px; left:55%; z-index:40000;">
+                <div class="window-bar" id="blogBar">
+        <div style="display:flex; align-items:center; gap:2px; left:2px; position:relative;">
+          <img src="/MainResources/microblog.png" class="window-icon" alt="calendar">
+            <span>microblog.exe</span>
+        </div>
+                    <div class="window-buttons">
+                        <div onclick="closeBlog()">X</div>
+                    </div>
+                </div>
+                <div class="window-content" style="display:flex; gap:8px;">
+
+                    <div style="width:160px; background:#969595; border:2px inset #fff; padding:5px; font-family:MS Sans Serif;">
+                        <div class="blog-date" onclick="showPost('b1')">📅 2025-12-31</div>
+                        <div class="blog-date" onclick="showPost('b2')">📅 2026-01-01</div>
+                        <div class="blog-date" onclick="showPost('b3')">📅 2026-01-10</div>
+                        <div class="blog-date" onclick="showPost('b4')">📅 2026-01-21</div>
+						<div class="blog-date" onclick="showPost('b5')">📅 2026-01-25</div>
+                    </div>
+
+                    <div style="flex:1; background:#969595; border:2px inset #fff; padding:10px; color:#000000; font-family:'MS Sans Serif';">
+					
+                <div class="post" id="b1">
+    <b>31.12.2025</b>
+    <hr>
+     запуск сайта<br>сайт работает. я удивлен, пацы.
+                    </div>
+    <br>
+                <div class="post" id="b2">
+    <b>01.01.2026</b>
+    <hr>
+    <p>1) добавил пару блоков, разбил сайт на папки, вроде всё красиво, почистил код, а то 600+ строк не кайф.</p>
+    <p>2) сделал ± уникальный статус бар для моего ПК. Он работает так: python файл запущен на ПК и раз в 30 секунд пушит <code>status.json</code> на neocities, сайт читает <code>status.json</code> и обновляет статус. Это был крутой опыт (потратил 4 часа). Сначала пытался сделать через пуш на удалённую БД с fetch на neocities, но там стоит защита :( Пришлось использовать API. Чет я люблю всё усложнять по жизни.</p>
+				    </div>
+				    
+				<div class="post" id="b3">
+    <b>10.01.2026</b>
+    <hr>
+    <p>я понял что мне впадлу вести этот микроблог, мб чет придумаю другое</p>
+				    </div>
+				    
+				<div class="post" id="b4">
+    <b>21.01.2026</b>
+    <hr>
+    <p>я ничего не придумал мне лень чуть-чуть, буду дальше микроблог вести </p>
+				    </div>
+				    
+				<div class="post" id="b5">
+    <b>25.01.2026</b>
+    <hr>
+    <p>последние пару дней на чилле, начал хорошо учиться (после 11 лет ничего бессмысленного сидения в школе), все еще готовлюсь к экзаменам, пробники сдаю на 90/140, нормик</p>
+
+	<p>времени на сайт мало, но понемного фикшу всякое. научился делать циферблаты на мой huawei band. на этом пока что всеее! микроблог свой пока буду вести на русском, мне так полегче мысли выражать свободно</p>
+				    </div>
+					
+                    </div>
+                </div>
+            </div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/main/drag.js" defer></script>
+<!-- <script src="js/main/blog.js" defer></script> -->
+<script src="js/main/guestbook.js" defer></script>
+<script src="js/main/status.js" defer></script>
+<script src="js/main/links.js" defer></script>
+<script src="js/main/taskbar.js" defer></script>
+<script src="js/main/player.js" defer></script>
+<script>
+</script>
+
+</body>
+</html>
