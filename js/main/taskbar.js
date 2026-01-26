@@ -99,12 +99,18 @@ function makeWindowFocusable(windowId) {
 
 // apps
 function openUpdates() {
-    openWindow('updatesWindow', 'MainResources/calendar.png', 'Updates.exe');
+    openWindow('updatesWindow', 'MainResources/calendar.png', 'updates.exe');
 }
 function closeUpdates() { closeWindow('updatesWindow'); }
 
+function openMoonPhase() {
+    openWindow('moonPhaseWindow', 'MainResources/moonPhase.png', 'moon phase.exe');
+    displayMoonPhase();
+}
+function closeMoonPhase() { closeWindow('moonPhaseWindow'); }
+
 function openComputer() {
-    openWindow('computerWindow', 'MainResources/computer.png', 'My Computer.exe');
+    openWindow('computerWindow', 'MainResources/computer.png', 'my Computer.exe');
 }
 function closeComputer() { closeWindow('computerWindow'); }
 
@@ -142,7 +148,8 @@ function showPost(id) {
 document.addEventListener("DOMContentLoaded", () => {
     addTaskbarButton('mainWindow', 'MainResources/browser.png', 'Internet Explorer.exe');
 
-    ['mainWindow','blogWindow','updatesWindow','computerWindow','minesweeperWindow'].forEach(makeWindowFocusable);
+    ['mainWindow','blogWindow','updatesWindow','computerWindow','minesweeperWindow','moonPhaseWindow'].forEach(makeWindowFocusable);
+
 
     const blogBtn = document.getElementById("blogBtn");
     const blogWindow = document.getElementById("blogWindow");
