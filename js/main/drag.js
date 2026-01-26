@@ -42,6 +42,7 @@ drag(document.getElementById("blogWindow"), document.getElementById("blogBar"));
 drag(document.getElementById("guestbookWindow"), document.getElementById("guestbookBar"));
 drag(document.getElementById("computerWindow"), document.getElementById("computerBar"));
 drag(document.getElementById("updatesWindow"), document.getElementById("updatesBar"));
+drag(document.getElementById("moonPhaseWindow"), document.getElementById("moonPhaseBar"));
 drag(document.getElementById("minesweeperWindow"), document.getElementById("minesweeperBar"));
 
 
