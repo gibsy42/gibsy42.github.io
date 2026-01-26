@@ -251,8 +251,8 @@
         CPU: Intel core i5 12400f<br>
         GPU: Nvidia RTX3060 12gb<br>
         RAM: 2 x 16 GB DDR4 3200 mhz<br>
-        Browser: Firefox ( the best browser btw)<br>
-        OS: Windows 11 64bit/ Cachyos<br>
+        Browser: Firefox ( the best browser btw )<br>
+        OS: Windows 11 64bit / Cachyos<br>
       </div>
 
       </div>
@@ -283,6 +283,13 @@
              style="position: absolute; top: 0; left: 0; width: 48px; height: 48px; pointer-events: none;" alt="shortcut">
       <div class="shortcut-label">My stuff</div>
     </a>
+  </div>
+  
+      <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;" onclick="openMoonPhase()">
+      <img src="/MainResources/moonPhase.png" width="48" alt="blog">
+        <img src="/MainResources/shortcut.png"
+             style="position: absolute; top: 0; left: 0; width: 48px; height: 48px; pointer-events: none;" alt="shortcut">
+      <div class="shortcut-label">Moon phase</div>
   </div>
   
   <div class="shortcut" style="text-align:center; width:48px; margin:10px; position: relative;" onclick="openMinesweeper()">
@@ -340,6 +347,20 @@
           <iframe src="https://jaryq.atabook.org" style="width:100%; height:100%; border:none; overflow:auto;"></iframe>
       </div>
 </div>
+
+<!-- фазы луныы -->
+<div class="window" id="moonPhaseWindow" style="display:none; width:150px; height:170px; top:160px; left:55%; transform:translateX(-50%); z-index:60000;">
+      <div class="window-bar" id="moonPhaseBar">
+            <span>moon phase.exe</span>
+      <div class="window-buttons">
+              <div onclick="closeMoonPhase()">X</div>
+      </div>
+</div>
+      <div class="window-content" style="padding:0; height:100px; color:black;">
+          
+      </div>
+</div>
+
 
             <!--окно блога--> <!--"почему тут а не в конце с остальными окнами??" мне лень переделывать!!--> <!-- уже переделал :) -->
             <div class="window" id="blogWindow" style="display:none; width:720px; top:160px; left:55%; z-index:40000;">
@@ -409,6 +430,7 @@
 <script src="js/main/links.js" defer></script>
 <script src="js/main/taskbar.js" defer></script>
 <script src="js/main/player.js" defer></script>
+<script src="js/main/moon.js" defer></script>
 <script>
 </script>
 
