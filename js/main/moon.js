@@ -1,29 +1,50 @@
 function displayMoonPhase() {
-    const phases = [
-        {name:"New Moon", file:"newMoon.png"},
-        {name:"Waxing Crescent", file:"waxingCrescent.png"},
-        {name:"First Quarter", file:"firstQuarter.png"},
-        {name:"Waxing Gibbous", file:"waxingGibbous.png"},
-        {name:"Full Moon", file:"fullMoon.png"},
-        {name:"Waning Gibbous", file:"waningGibbous.png"},
-        {name:"Last Quarter", file:"thirdQuarter.png"},
-        {name:"Waning Crescent", file:"waningCrescent.png"}
-    ];
-
+    const astanaTimezone = 'Asia/Almaty';
     const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth() + 1;
-    const day = now.getDate();
+    const astanaNow = new Date(
+        now.toLocaleString("en-US", { timeZone: astanaTimezone })
+    );
 
-    const c = (year % 100) - Math.floor((year % 100) / 19) * 19;
-    const age = (day + Math.floor((month + 1) * 26 / 10) + c) % 30;
-    const index = Math.floor(age / 3.69) % 8;
+    const currentDate = astanaNow.getDate();
+    const currentMonth = astanaNow.getMonth() + 1;
 
-    const phase = phases[index];
+    const ageOfMoon = Math.floor(
+        (currentDate + 11 * currentMonth + 3) % 30.6
+    );
 
-    const contentDiv = document.querySelector("#moonPhaseWindow .window-content");
-    contentDiv.innerHTML = `
-        <img src="moons/${phase.file}" style="width:64px; display:block; margin:20px auto;">
-        <p style="color:black; text-align:center; font-size:18px;">${phase.name}</p>
+    let moonPhase;
+    let file;
+
+    if (ageOfMoon < 1.5) {
+        moonPhase = "New Moon";
+        file = "newMoon.png";
+    } else if (ageOfMoon < 7.5) {
+        moonPhase = "Waxing Crescent";
+        file = "waxingCrescent.png";
+    } else if (ageOfMoon < 8.5) {
+        moonPhase = "First Quarter";
+        file = "firstQuarter.png";
+    } else if (ageOfMoon < 12.5) {
+        moonPhase = "Waxing Gibbous";
+        file = "waxingGibbous.png";
+    } else if (ageOfMoon < 15.5) {
+        moonPhase = "Full Moon";
+        file = "fullMoon.png";
+    } else if (ageOfMoon < 21) {
+        moonPhase = "Waning Gibbous";
+        file = "waningGibbous.png";
+    } else if (ageOfMoon < 23) {
+        moonPhase = "Last Quarter";
+        file = "thirdQuarter.png";
+    } else {
+        moonPhase = "Waning Crescent";
+        file = "waningCrescent.png";
+    }
+
+    document.querySelector("#moonPhaseWindow .window-content").innerHTML = `
+        <img src="moons/${file}" style="width:64px; display:block; margin:20px auto;">
+        <p style="color:black; text-align:center; font-size:18px;">
+            ${moonPhase}
+        </p>
     `;
 }
