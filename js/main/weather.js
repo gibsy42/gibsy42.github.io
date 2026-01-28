@@ -1,33 +1,28 @@
-// Simple Weather Widget - Windows 98 style (с фиксированным городом)
 async function fetchWeather() {
     try {
-        // Координаты Aktau, Kazakhstan
-        const lat = 43.6502;
-        const lon = 51.1603;
-        const city = 'Aktau';
+        const geoResponse = await fetch('https://ip-api.com/json/'); // HTTPS
+        const geoData = await geoResponse.json();
         
-        // Open-Meteo API (бесплатный, без ключа, без CORS)
+        const city = geoData.city || 'Aktau';
+        const lat = geoData.lat;
+        const lon = geoData.lon;
+
         const weatherResponse = await fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=auto`
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&timezone=auto`
         );
         
-        if (!weatherResponse.ok) {
-            throw new Error('Weather unavailable');
-        }
+        if (!weatherResponse.ok) throw new Error('Weather unavailable');
         
         const weather = await weatherResponse.json();
-        
-        // Обновляем данные
-        const temp = Math.round(weather.current.temperature_2m);
-        const humidity = weather.current.relative_humidity_2m;
-        const windSpeed = Math.round(weather.current.wind_speed_10m);
+        const temp = Math.round(weather.current_weather.temperature);
+        const windSpeed = Math.round(weather.current_weather.windspeed);
+        const humidity = weather.current_weather.relativehumidity ?? 'N/A';
         
         document.getElementById('weatherLocation').textContent = city;
         document.getElementById('weatherTemp').textContent = `Temperature: ${temp}°C`;
         document.getElementById('weatherHumidity').textContent = `Humidity: ${humidity}%`;
         document.getElementById('weatherWind').textContent = `Wind: ${windSpeed} km/h`;
         
-        // Время обновления
         const now = new Date();
         const timeStr = now.toTimeString().slice(0, 5);
         document.getElementById('weatherUpdated').textContent = `Updated: ${timeStr}`;
@@ -40,10 +35,3 @@ async function fetchWeather() {
         document.getElementById('weatherWind').textContent = 'Wind: N/A';
     }
 }
-
-// Запуск при загрузке
-document.addEventListener('DOMContentLoaded', () => {
-    fetchWeather();
-    // Обновление каждые 10 минут
-    setInterval(fetchWeather, 600000);
-});
