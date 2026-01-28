@@ -1,12 +1,12 @@
+// Simple Weather Widget - Windows 98 style (с фиксированным городом)
 async function fetchWeather() {
     try {
-        const geoResponse = await fetch('http://ip-api.com/json/');
-        const geoData = await geoResponse.json();
+        // Координаты Aktau, Kazakhstan
+        const lat = 43.6502;
+        const lon = 51.1603;
+        const city = 'Aktau';
         
-        const city = geoData.city || 'Aktau';
-        const lat = geoData.lat;
-        const lon = geoData.lon;
-
+        // Open-Meteo API (бесплатный, без ключа, без CORS)
         const weatherResponse = await fetch(
             `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=auto`
         );
@@ -17,6 +17,7 @@ async function fetchWeather() {
         
         const weather = await weatherResponse.json();
         
+        // Обновляем данные
         const temp = Math.round(weather.current.temperature_2m);
         const humidity = weather.current.relative_humidity_2m;
         const windSpeed = Math.round(weather.current.wind_speed_10m);
@@ -26,6 +27,7 @@ async function fetchWeather() {
         document.getElementById('weatherHumidity').textContent = `Humidity: ${humidity}%`;
         document.getElementById('weatherWind').textContent = `Wind: ${windSpeed} km/h`;
         
+        // Время обновления
         const now = new Date();
         const timeStr = now.toTimeString().slice(0, 5);
         document.getElementById('weatherUpdated').textContent = `Updated: ${timeStr}`;
@@ -39,7 +41,9 @@ async function fetchWeather() {
     }
 }
 
+// Запуск при загрузке
 document.addEventListener('DOMContentLoaded', () => {
     fetchWeather();
+    // Обновление каждые 10 минут
     setInterval(fetchWeather, 600000);
 });
