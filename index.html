@@ -314,11 +314,17 @@
   
   
 <div class='window box' style="position:absolute; right:30px; width: 250px; bottom:250px;">
-    <div class="window-bar">info</div>  
-      <div class="window-content">
-      <p style = "font-weight:bold; font-size:16px;margin:0px;">I am currently preparing for my exams, so I don’t have time to work on this website rn :( i will try my best to improve it and fill out all the pages</p>
-        </div>
-  </div>
+    <div class="window-bar">Weather</div>  
+    <div class="window-content" id="weatherContent">
+        <div id="weatherLocation">Loading...</div>
+        <hr>
+        <div id="weatherTemp">Temperature: --°C</div>
+        <div id="weatherHumidity">Humidity: --%</div>
+        <div id="weatherWind">Wind: -- km/h</div>
+        <hr style="margin-top:8px;">
+        <div id="weatherUpdated">Updated: --:--</div>
+    </div>
+</div>
 
 <!-- сапер -->
 <div class="window" id="minesweeperWindow" style="display:none; flex-direction: column; width:320px; height:400px; top:400px; left:50%; transform:translateX(-50%); z-index:30000;">
