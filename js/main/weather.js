@@ -1,13 +1,14 @@
 async function fetchWeather() {
     try {
-        const geoResponse = await fetch('https://ipapi.co/json/');
+        const geoResponse = await fetch('http://ip-api.com/json/');
         const geoData = await geoResponse.json();
         
         const city = geoData.city || 'Aktau';
-        
-        const apiKey = 'b6907d289e10d714a6e88b30761fae22';
+        const lat = geoData.lat;
+        const lon = geoData.lon;
+
         const weatherResponse = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=auto`
         );
         
         if (!weatherResponse.ok) {
@@ -16,9 +17,9 @@ async function fetchWeather() {
         
         const weather = await weatherResponse.json();
         
-        const temp = Math.round(weather.main.temp);
-        const humidity = weather.main.humidity;
-        const windSpeed = Math.round(weather.wind.speed * 3.6);
+        const temp = Math.round(weather.current.temperature_2m);
+        const humidity = weather.current.relative_humidity_2m;
+        const windSpeed = Math.round(weather.current.wind_speed_10m);
         
         document.getElementById('weatherLocation').textContent = city;
         document.getElementById('weatherTemp').textContent = `Temperature: ${temp}°C`;
@@ -37,8 +38,8 @@ async function fetchWeather() {
         document.getElementById('weatherWind').textContent = 'Wind: N/A';
     }
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchWeather();
-
     setInterval(fetchWeather, 600000);
 });
