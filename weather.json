@@ -2,5 +2,6 @@
   "city": "Aktau",
   "temperature": -4,
   "wind_speed": 22,
-  "updated": "2026-01-28T17:58:12.400443+00:00"
+  "humidity": 69,
+  "updated": "2026-01-28T18:01:01.131179+00:00"
 }
