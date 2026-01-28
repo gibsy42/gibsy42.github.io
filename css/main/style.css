@@ -400,3 +400,33 @@ html, body {
 #ram {
     font-weight: bold;
 }
+
+#weatherContent {
+    font-family: 'MS Sans Serif', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+#weatherLocation {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#weatherTemp,
+#weatherHumidity,
+#weatherWind {
+    margin: 3px 0;
+}
+
+#weatherUpdated {
+    font-size: 11px;
+    color: #808080;
+    margin-top: 5px;
+}
+
+#weatherContent hr {
+    border: none;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #ffffff;
+    margin: 5px 0;
+}
