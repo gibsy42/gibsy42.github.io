@@ -1,24 +1,21 @@
 async function fetchWeather() {
     try {
-        const geoResponse = await fetch('https://ip-api.com/json/');
-        if (!geoResponse.ok) throw new Error('Geo unavailable');
+        const geoResp = await fetch('https://ipwhois.app/json/');
+        if (!geoResp.ok) throw new Error('Geo unavailable');
 
-        const geo = await geoResponse.json();
-
+        const geo = await geoResp.json();
         const city = geo.city || 'Unknown';
-        const lat = geo.lat;
-        const lon = geo.lon;
+        const lat = geo.latitude;
+        const lon = geo.longitude;
 
-        const weatherResponse = await fetch(
+        const weatherResp = await fetch(
             `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relative_humidity_2m&timezone=auto`
         );
-        if (!weatherResponse.ok) throw new Error('Weather unavailable');
+        if (!weatherResp.ok) throw new Error('Weather unavailable');
 
-        const weather = await weatherResponse.json();
-
+        const weather = await weatherResp.json();
         const temp = Math.round(weather.current_weather.temperature);
         const wind = Math.round(weather.current_weather.windspeed);
-
         const humidity = weather.hourly.relative_humidity_2m[0];
 
         document.getElementById('weatherLocation').textContent = city;
@@ -38,8 +35,3 @@ async function fetchWeather() {
         document.getElementById('weatherWind').textContent = 'Wind: N/A';
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    fetchWeather();
-    setInterval(fetchWeather, 600000);
-});
