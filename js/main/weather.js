@@ -1,6 +1,5 @@
 async function fetchWeather() {
     try {
-        // Бесплатный IP API с HTTPS и CORS
         const geoResp = await fetch('https://ipwho.is/');
         if (!geoResp.ok) throw new Error('Geo unavailable');
 
@@ -9,7 +8,6 @@ async function fetchWeather() {
         const lat = geo.latitude;
         const lon = geo.longitude;
 
-        // Погода через Open-Meteo
         const weatherResp = await fetch(
             `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=relative_humidity_2m&timezone=auto`
         );
