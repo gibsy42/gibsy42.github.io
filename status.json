@@ -1,11 +1,11 @@
 {
   "online": true,
-  "last_update": "2026-02-03T13:49:43.128097+00:00",
+  "last_update": "2026-02-03T13:50:47.671648+00:00",
   "online_since": "2026-02-03T08:39:06.453055+00:00",
   "pc_stats": {
-    "cpu_percent": 8.2,
-    "gpu_percent": 6,
-    "ram": "7.9/32GB",
+    "cpu_percent": 9.7,
+    "gpu_percent": 0,
+    "ram": "8.5/32GB",
     "disks": {
       "C:": "208/447GB",
       "D:": "440/466GB",
