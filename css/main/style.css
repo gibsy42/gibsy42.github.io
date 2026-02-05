@@ -67,10 +67,7 @@ html, body {
     border-top: 2px solid #c3c3c3;
     border-left: 2px solid #c3c3c3;
     border-right: 2px solid #c3c3c3;
-    
-    
 }
-
 .window-bar .window-icon {
     width: 16px;
     height: 16px;
@@ -362,6 +359,7 @@ html, body {
     white-space: nowrap;
     color: white;
     text-shadow: 1px 1px 0 #000;
+    margin:0;
 }
 
 #desktop {
@@ -401,15 +399,33 @@ html, body {
     font-weight: bold;
 }
 
+#changelog {
+  scrollbar-width: thin !important;
+  scrollbar-color: #000000 #cccccc !important;
+}
+
+#changelog::-webkit-scrollbar {
+  width: 8px !important; 
+}
+
+#changelog::-webkit-scrollbar-track {
+  background: #cccccc !important;
+}
+
+#changelog::-webkit-scrollbar-thumb {
+  background: #000000 !important;
+}
+
 #weatherContent {
     font-family: 'MS Sans Serif', monospace;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
 #weatherLocation {
     font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 15px;
+    margin: 0;
 }
 
 #weatherTemp,
@@ -427,6 +443,5 @@ html, body {
 #weatherContent hr {
     border: none;
     border-top: 1px solid #808080;
-    border-bottom: 1px solid #ffffff;
     margin: 5px 0;
 }

@@ -70,3 +70,4 @@ console.log(
     "%c6LugnDMj9DcU4ib3JLzoyupsL5BSyyMyQ2reAPRf4RjZzNoqKV18xDjGxbGFpVjq5PvxKoxSrS4mVFitV53EKZyCPmmVJ4Zb8G9yJeFwekWny5M5AMkteAEbkgYb39Z4NPeeNJkdXbGdcNetir8j79ZrrS7hXMJYptPTvQa16A8ZnVz", 
     "color: red; font-size: 30px; font-weight: bold; background: black; padding: 10px;")
 
+
